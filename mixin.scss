@@ -1,0 +1,11 @@
+// mixmin animation
+@use "test";
+@mixin simple-animation {
+    transition: transform 0.3s ease-in-out;
+  
+    &:hover {
+      transform: scale(1.1);
+      padding: fun.md(14) * 1px;
+    }
+  }
+  

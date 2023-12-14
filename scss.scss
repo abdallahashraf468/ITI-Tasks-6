@@ -1,0 +1,117 @@
+
+// variables
+@use "mixin";
+
+body{
+  background-color: $abdullah-color;
+}
+
+$abdullah-color: #c6538c;
+$border-dark: rgba($abdullah-color, 0.88);
+
+.alert {
+  border: 1px solid $border-dark;
+}
+
+$black: #000 ;
+$border-radius: 0.25rem ;
+$box-shadow: 0 0.5rem 1rem rgba($black, 0.15) ;
+
+abdullah {
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+}
+
+
+
+
+// mixin
+
+@mixin reset-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+
+@mixin horizontal-list {
+  @include reset-list;
+
+  li {
+    display: inline-block;
+    margin: {
+      left: -2px;
+      right: 2em;
+    }
+  }
+}
+
+nav ul {
+  @include horizontal-list;
+}
+
+
+// nesting
+
+nav {
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  li {
+    display: inline-block;
+  }
+  a {
+    display: block;
+    padding: 6px 12px;
+    text-decoration: none;
+  }
+}
+
+
+.error {
+  border: 1px #f00;
+  background-color: #fdd;
+
+  &--serious {
+    @extend .error;
+    border-width: 3px;
+  }
+}
+
+
+
+// sum class for all alerts
+.alert {
+  padding: 10px;
+  border: 1px solid transparent;
+  transition: background-color 0.3s ease-in-out;
+
+  &.success {
+    background-color: #28a745;
+    color: #fff;
+
+    &:hover {
+      background-color: darken(#28a745, 10%);
+    }
+  }
+
+  &.warning {
+    background-color: #ffc107;
+    color: #000;
+
+    &:hover {
+      background-color: darken(#ffc107, 10%);
+    }
+  }
+
+  &.message {
+    background-color: #007bff;
+    color: #fff;
+
+    &:hover {
+      background-color: darken(#007bff, 10%);
+    }
+  }
+}

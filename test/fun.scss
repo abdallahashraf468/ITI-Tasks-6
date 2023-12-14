@@ -1,0 +1,17 @@
+@function md($num: 1, $num2: 1) {
+    $res: 0;
+    $res: $num + $num2;
+    @return $res;
+}
+
+
+@function random-color() {
+    $red: random(255);
+    $green: random(255);
+    $blue: random(255);
+    $color: rgb($red, $green, $blue);
+
+    @return $color;
+}
+
+$randomColor: random-color();

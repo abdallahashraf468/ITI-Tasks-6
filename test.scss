@@ -1,0 +1,7 @@
+@function md ($num:1 , $num2:1)
+{
+    $res:0;
+    $res: $num1+$num2;
+    @return $res;
+
+}

@@ -1,0 +1,141 @@
+@use "mixin";
+@use "fun";
+// variables
+$Muhammad-color: #c6538c;
+$Muhammad-color1: #28a745;
+$Muhammad-color2: #ffc107;
+$Muhammad-color3: #007bff;
+$border-dark: rgba($Muhammad-color, 0.88);
+
+body {
+    background-color: $Muhammad-color;
+    color: white;
+}
+
+@mixin button-size {
+    padding: 10px;
+    margin: 0;
+    border-radius: 5px;
+    width: 50px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.btn {
+    @include button-size();
+    @include mixin.simple-animation;
+    background-color: $Muhammad-color1;
+}
+
+.btn-primary {
+    background-color: $Muhammad-color2;
+    @include button-size();
+}
+
+.btn-danger {
+    background-color: $Muhammad-color3;
+    @include button-size();
+}
+
+.alert {
+    border: 1px solid $border-dark;
+}
+
+$black: #000;
+$border-radius: 0.25rem;
+$box-shadow: 0 0.5rem 1rem rgba($black, 0.15);
+
+
+// mixin
+
+@mixin reset-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+
+@mixin horizontal-list {
+    @include reset-list;
+
+    li {
+        display: inline-block;
+
+        margin: {
+            left: -2px;
+            right: 2em;
+        }
+    }
+}
+
+nav ul {
+    @include horizontal-list;
+}
+
+
+// nesting
+
+nav {
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    li {
+        display: inline-block;
+    }
+
+    a {
+        display: block;
+        padding: 6px 12px;
+        text-decoration: none;
+    }
+}
+
+// inheritance
+.error {
+    border: 1px #f00;
+    background-color: fun.random-color();
+
+    &--serious {
+        @extend .error;
+        border-width: 3px;
+        color: #000;
+    }
+}
+
+
+// some classes for alerts :
+.alert {
+    padding: 10px;
+    border: 1px solid transparent;
+    transition: background-color 0.3s ease-in-out;
+
+    &.success {
+        background-color: $Muhammad-color1;
+        color: #fff;
+
+        &:hover {
+            background-color: darken($Muhammad-color1, 10%);
+        }
+    }
+
+    &.warning {
+        background-color: $Muhammad-color2;
+        color: #000;
+
+        &:hover {
+            background-color: darken($Muhammad-color2, 10%);
+        }
+    }
+
+    &.message {
+        background-color: $Muhammad-color3;
+        color: #fff;
+
+        &:hover {
+            background-color: darken($Muhammad-color3, 10%);
+        }
+    }
+}

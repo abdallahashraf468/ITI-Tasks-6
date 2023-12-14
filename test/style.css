@@ -1,0 +1,111 @@
+body {
+  background-color: #c6538c;
+  color: white;
+}
+
+.btn {
+  padding: 10px;
+  margin: 0;
+  border-radius: 5px;
+  width: 50px;
+  cursor: pointer;
+  display: inline-block;
+  transition: transform 0.3s ease-in-out;
+  background-color: #28a745;
+}
+.btn:hover {
+  transform: scale(1.1);
+  padding: 15px;
+}
+
+.btn-primary {
+  background-color: #ffc107;
+  padding: 10px;
+  margin: 0;
+  border-radius: 5px;
+  width: 50px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.btn-danger {
+  background-color: #007bff;
+  padding: 10px;
+  margin: 0;
+  border-radius: 5px;
+  width: 50px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.alert {
+  border: 1px solid rgba(198, 83, 140, 0.88);
+}
+
+Muhammad {
+  border-radius: 0.25rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+nav ul li {
+  display: inline-block;
+  margin-left: -2px;
+  margin-right: 2em;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+nav li {
+  display: inline-block;
+}
+nav a {
+  display: block;
+  padding: 6px 12px;
+  text-decoration: none;
+}
+
+.error, .error--serious {
+  border: 1px #f00;
+  background-color: rgb(156, 97, 239);
+}
+.error--serious {
+  border-width: 3px;
+  color: #000;
+}
+
+.alert {
+  padding: 10px;
+  border: 1px solid transparent;
+  transition: background-color 0.3s ease-in-out;
+}
+.alert.success {
+  background-color: #28a745;
+  color: #fff;
+}
+.alert.success:hover {
+  background-color: #1e7e34;
+}
+.alert.warning {
+  background-color: #ffc107;
+  color: #000;
+}
+.alert.warning:hover {
+  background-color: #d39e00;
+}
+.alert.message {
+  background-color: #007bff;
+  color: #fff;
+}
+.alert.message:hover {
+  background-color: #0062cc;
+}
+
+/*# sourceMappingURL=style.css.map */
